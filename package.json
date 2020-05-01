@@ -1,10 +1,10 @@
 {
-  "name": "iobroker.systeminfo",
-  "version": "0.3.0",
+  "name": "iobroker.systeminfo - sensenmann",
+  "version": "0.3.1a",
   "description": "ioBroker (system)info Adapter",
-  "author": "Frank Joke <frankjoke@hotmail.com>",
+  "author": "René Huber <rene.huber@rhse.at>",
   "contributors": [],
-  "homepage": "https://github.com/frankjoke/ioBroker.systeminfo",
+  "homepage": "https://github.com/sensenmann/ioBroker.systeminfo",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frankjoke/ioBroker.systeminfo.git"
+    "url": "git+https://github.com/sensenmann/ioBroker.systeminfo.git"
   },
   "engines": {
     "node": ">=4.3.0"
@@ -40,7 +40,7 @@
     "test": "node node_modules/mocha/bin/mocha --exit"
   },
   "bugs": {
-    "url": "https://github.com/frankjoke/ioBroker.systeminfo/issues"
+    "url": "https://github.com/sensenmann/ioBroker.systeminfo/issues"
   },
   "directories": {
     "doc": "doc",
