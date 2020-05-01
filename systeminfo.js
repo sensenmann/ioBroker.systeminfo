@@ -452,7 +452,12 @@ function setItem(item, name, value) {
 		default:
 			break;
 	}
-	return A.makeState(o, value, true);
+
+	let nid = o.id;
+
+	return A.getObject(nid)
+		.then((obj) =>
+			obj && obj.native ? A.changeState(nid, value, true) : A.makeState(nid, value, true));
 }
 
 function doPoll(plist) {
@@ -726,8 +731,8 @@ function main() {
 				startkey: A.ain,
 				endkey: A.ain + '\u9999'
 			})
-			.then(res => A.seriesOf(res.rows, item => A.states[item.id.slice(A.ain.length)] ? A.resolve() :
-				A.D(`Delete unneeded state ${item.id}`, A.removeState(item.id.slice(A.ain.length))), 2))
+//			.then(res => A.seriesOf(res.rows, item => A.states[item.id.slice(A.ain.length)] ? A.resolve() :
+//				A.D(`Delete unneeded state ${item.id}`, A.removeState(item.id.slice(A.ain.length))), 2))
 			.then(() => {
 				for (let sh in list) {
 					A.D(`Will poll every '${sh}': ${list[sh].map(x => x.name)}.`);

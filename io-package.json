@@ -1,9 +1,12 @@
 {
   "common": {
     "name": "systeminfo",
-    "version": "0.3.1",
+    "version": "0.3.1a",
     "title": "Systeminfo Adapter to get data from systems",
     "news": {
+      "0.3.1a": {
+	"de": "Vorhandene Werte werden nun nicht mehr kompltt überschrieben/gelöscht"
+       },
       "0.3.1": {
         "en": "make compatible with js-controller 2.0",
         "de": "kompatibel machen mit js-controller 2.0",
@@ -40,7 +43,7 @@
     "enabled": true,
     "messagebox": false,
     "subscribe": "messagebox_",
-    "extIcon": "https://raw.githubusercontent.com/frankjoke/ioBroker.systeminfo/master/admin/systeminfo.png",
+    "extIcon": "https://raw.githubusercontent.com/sensenmann/ioBroker.systeminfo/master/admin/systeminfo.png",
     "keywords": [
       "Systeminfo",
       "System",
@@ -50,13 +53,13 @@
       "HTTP",
       "XML"
     ],
-    "readme": "https://github.com/frankjoke/ioBroker.systeminfo/blob/master/README.md",
+    "readme": "https://github.com/sensenmann/ioBroker.systeminfo/blob/master/README.md",
     "loglevel": "info",
     "type": "misc-data",
     "authors": [
-      "Frank Joke <frankjoke@hotmail.com>"
+      "René Huber <rene.huber@rhse.at>"
     ],
-    "installedFrom": "iobroker.systeminfo@0.3.1"
+    "installedFrom": "iobroker.systeminfo@0.3.1a"
   },
   "native": {
     "startup": "#\ngpio mode 1 output\n#rpi: echo none >/sys/class/leds/led0/trigger\necho none >/sys/class/leds/green_led/trigger",
