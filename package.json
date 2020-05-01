@@ -1,50 +1,62 @@
 {
-  "name": "iobroker.systeminfo",
-  "version": "0.3.1a",
-  "description": "ioBroker (system)info Adapter",
-  "author": "René Huber <rene.huber@rhse.at>",
-  "contributors": [],
-  "homepage": "https://github.com/sensenmann/ioBroker.systeminfo",
-  "license": "MIT",
-  "keywords": [
-    "ioBroker",
-    "System",
-    "Web",
-    "Files"
+  "_from": "iobroker.systeminfo@0.3.1",
+  "_id": "iobroker.systeminfo@0.3.1",
+  "_inBundle": false,
+  "_integrity": "sha512-wORSgjF6v47GGvMxpRUz31jD7sH37L80p61YmIH1NkvpUUijMlT9RHAPyShoZLwr0UXomrjqAuDMgWeG/m6PTQ==",
+  "_location": "/iobroker.systeminfo",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "iobroker.systeminfo@0.3.1",
+    "name": "iobroker.systeminfo",
+    "escapedName": "iobroker.systeminfo",
+    "rawSpec": "0.3.1",
+    "saveSpec": null,
+    "fetchSpec": "0.3.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sensenmann/ioBroker.systeminfo.git"
-  },
-  "engines": {
-    "node": ">=4.3.0"
-  },
-  "dependencies": {
-    "@frankjoke/myadapter": "https://github.com/frankjoke/myAdapter/tarball/master",
-    "cheerio": "^1.0.0-rc.3",
-    "node-schedule": "^1.3.2",
-    "systeminformation": "^4.23.3",
-    "xml2js": "^0.4.23"
-  },
-  "devDependencies": {
-    "grunt": "^1.1.0",
-    "grunt-replace": "^1.0.1",
-    "grunt-contrib-jshint": "^2.1.0",
-    "grunt-jscs": "^3.0.1",
-    "grunt-http": "^2.3.3",
-    "mocha": "^4.1.0",
-    "chai": "^4.2.0"
-  },
-  "main": "systeminfo.js",
-  "scripts": {
-    "test": "node node_modules/mocha/bin/mocha --exit"
+  "_resolved": "https://registry.npmjs.org/iobroker.systeminfo/-/iobroker.systeminfo-0.3.1.tgz",
+  "_shasum": "138e8550cc6867601cf940d14d7098c3dfa27e2d",
+  "_spec": "iobroker.systeminfo@0.3.1",
+  "_where": "/opt/iobroker/node_modules/iobroker.js-controller",
+  "author": {
+    "name": "Frank Joke",
+    "email": "frankjoke@hotmail.com"
   },
   "bugs": {
-    "url": "https://github.com/sensenmann/ioBroker.systeminfo/issues"
+    "url": "https://github.com/frankjoke/ioBroker.systeminfo/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [],
+  "dependencies": {
+    "@apollon/frankjoke-myadapter": "1.2.5",
+    "@iobroker/adapter-core": "^1.0.3",
+    "cheerio": "^1.0.0-rc.2",
+    "node-schedule": "^1.2.1",
+    "systeminformation": "^3.32.1",
+    "xml2js": "^0.4.19"
+  },
+  "deprecated": false,
+  "description": "ioBroker (system)info Adapter",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-http": "^2.2.0",
+    "grunt-jscs": "^3.0.1",
+    "grunt-replace": "^1.0.1",
+    "mocha": "^4.1.0"
   },
   "directories": {
     "doc": "doc",
     "test": "test"
+  },
+  "engines": {
+    "node": ">=4.3.0"
   },
   "eslintConfig": {
     "env": {
@@ -52,5 +64,23 @@
       "mocha": true,
       "es6": true
     }
-  }
+  },
+  "homepage": "https://github.com/frankjoke/ioBroker.systeminfo",
+  "keywords": [
+    "ioBroker",
+    "System",
+    "Web",
+    "Files"
+  ],
+  "license": "MIT",
+  "main": "systeminfo.js",
+  "name": "iobroker.systeminfo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankjoke/ioBroker.systeminfo.git"
+  },
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha --exit"
+  },
+  "version": "0.3.1"
 }

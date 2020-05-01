@@ -41,11 +41,11 @@ class MyAdapter {
     static initAdapter() {
         states = {};
         this.D(`Adapter ${this.ains} starting.`);
-        this.getObjectList = this.c2p(adapter.objects.getObjectList);
-        this.getForeignState = this.c2p(adapter.getForeignState);
-        this.setForeignState = this.c2p(adapter.setForeignState);
-        this.getState = this.c2p(adapter.getState);
-        this.setState = this.c2p(adapter.setState);
+        this.getObjectList = this.c2p(adapter.objects.getObjectList).bind(adapter.objects);
+        this.getForeignState = this.c2p(adapter.getForeignState).bind(adapter);
+        this.setForeignState = this.c2p(adapter.setForeignState).bind(adapter);
+        this.getState = this.c2p(adapter.getState).bind(adapter);
+        this.setState = this.c2p(adapter.setState).bind(adapter);
 
         return (!adapter.config.forceinit ?
                 this.resolve({
@@ -56,7 +56,7 @@ class MyAdapter {
                     endkey: this.ain + '\u9999'
                 }))
             .then(res => res.rows.length > 0 ? this.D(`will remove ${res.rows.length} old states!`, res) : res)
-            // .then(res => this.seriesOf(res.rows, (i) => this.removeState(i.doc.common.name), 2))
+            .then(res => this.seriesOf(res.rows, (i) => this.removeState(i.doc.common.name), 2))
             .then(res => res, err => this.E('err from MyAdapter.series: ' + err))
             .then(() => this.getObjectList({
                 include_docs: true
@@ -100,17 +100,17 @@ class MyAdapter {
 
         this.writeFile = this.c2p(fs.writeFile);
         this.readFile = this.c2p(fs.readFile);
-        this.getForeignObject = this.c2p(adapter.getForeignObject);
-        this.setForeignObject = this.c2p(adapter.setForeignObject);
-        this.getForeignObjects = this.c2p(adapter.getForeignObjects);
-        this.getObject = this.c2p(adapter.getObject);
+        this.getForeignObject = this.c2p(adapter.getForeignObject).bind(adapter);
+        this.setForeignObject = this.c2p(adapter.setForeignObject).bind(adapter);
+        this.getForeignObjects = this.c2p(adapter.getForeignObjects).bind(adapter);
+        this.getObject = this.c2p(adapter.getObject).bind(adapter);
         this.deleteState = (id) => this.c1pe(adapter.deleteState)(id).catch(res => res === 'Not exists' ? this.resolve() : this.reject(res));
         this.delObject = (id, opt) => this.c1pe(adapter.delObject)(id, opt).catch(res => res === 'Not exists' ? this.resolve() : this.reject(res));
         this.delState = (id, opt) => this.c1pe(adapter.delState)(id, opt).catch(res => res === 'Not exists' ? this.resolve() : this.reject(res));
         this.removeState = (id, opt) => this.delState(id, opt).then(() => this.delObject((delete this.states[id], id), opt));
-        this.setObject = this.c2p(adapter.setObject);
-        this.createState = this.c2p(adapter.createState);
-        this.extendObject = this.c2p(adapter.extendObject);
+        this.setObject = this.c2p(adapter.setObject).bind(adapter);
+        this.createState = this.c2p(adapter.createState).bind(adapter);
+        this.extendObject = this.c2p(adapter.extendObject).bind(adapter);
 
         adapter.on('message', (obj) => !!obj ? this.processMessage(
                 this.D(`received Message ${this.O(obj)}`, obj)) : true)
