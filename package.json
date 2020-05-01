@@ -1,5 +1,5 @@
 {
-  "name": "iobroker.systeminfo - sensenmann",
+  "name": "iobroker.systeminfo-sensenmann",
   "version": "0.3.1a",
   "description": "ioBroker (system)info Adapter",
   "author": "René Huber <rene.huber@rhse.at>",
