@@ -56,7 +56,7 @@ class MyAdapter {
                     endkey: this.ain + '\u9999'
                 }))
             .then(res => res.rows.length > 0 ? this.D(`will remove ${res.rows.length} old states!`, res) : res)
-            .then(res => this.seriesOf(res.rows, (i) => this.removeState(i.doc.common.name), 2))
+            // .then(res => this.seriesOf(res.rows, (i) => this.removeState(i.doc.common.name), 2))
             .then(res => res, err => this.E('err from MyAdapter.series: ' + err))
             .then(() => this.getObjectList({
                 include_docs: true
