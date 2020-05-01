@@ -457,7 +457,7 @@ function setItem(item, name, value) {
 
 	return A.getObject(nid)
 		.then((obj) =>
-			obj && obj.native ? A.changeState(nid, value, true) : A.makeState(nid, value, true));
+			obj ? A.changeState(nid, value, true) : A.makeState(nid, value, true));
 }
 
 function doPoll(plist) {

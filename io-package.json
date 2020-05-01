@@ -1,10 +1,10 @@
 {
   "common": {
     "name": "systeminfo",
-    "version": "0.3.1a",
+    "version": "0.3.2",
     "title": "Systeminfo Adapter to get data from systems",
     "news": {
-      "0.3.1a": {
+      "0.3.2": {
 	"de": "Vorhandene Werte werden nun nicht mehr kompltt überschrieben/gelöscht"
        },
       "0.3.1": {
@@ -59,7 +59,7 @@
     "authors": [
       "René Huber <rene.huber@rhse.at>"
     ],
-    "installedFrom": "iobroker.systeminfo@0.3.1a"
+    "installedFrom": "iobroker.systeminfo@0.3.2"
   },
   "native": {
     "startup": "#\ngpio mode 1 output\n#rpi: echo none >/sys/class/leds/led0/trigger\necho none >/sys/class/leds/green_led/trigger",
